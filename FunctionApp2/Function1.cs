@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
-namespace FunctionApp1
+namespace FunctionApp2
 {
     public class Function1
     {
@@ -18,9 +18,7 @@ namespace FunctionApp1
         public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
-            //testing
             return new OkObjectResult("Welcome to Azure Functions!");
-
         }
     }
 }
