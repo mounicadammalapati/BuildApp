@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionApp2", "FunctionApp2\FunctionApp2.csproj", "{DBDA1998-1589-4035-877C-A0EB62C40D18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopCartApp", "ShopCartApp\ShopCartApp.csproj", "{35EF1FD5-AD77-4C77-BB17-71CF717FF206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DBDA1998-1589-4035-877C-A0EB62C40D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBDA1998-1589-4035-877C-A0EB62C40D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBDA1998-1589-4035-877C-A0EB62C40D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBDA1998-1589-4035-877C-A0EB62C40D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35EF1FD5-AD77-4C77-BB17-71CF717FF206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35EF1FD5-AD77-4C77-BB17-71CF717FF206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35EF1FD5-AD77-4C77-BB17-71CF717FF206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35EF1FD5-AD77-4C77-BB17-71CF717FF206}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

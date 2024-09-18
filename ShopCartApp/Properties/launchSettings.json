@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "FunctionApp2": {
+    "ShopCartApp": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7295",
+      "commandLineArgs": "--port 7241",
       "launchBrowser": false
     }
   }
