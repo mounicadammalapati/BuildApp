@@ -1,8 +1,13 @@
+using AutoMapper;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using ShopCartApp.Entities;
+using ShopCartApp.Mappings;
+using ShopCartApp.Repository;
+using System.Reflection;
 
 public class Program
 {
@@ -30,9 +35,15 @@ public class Program
             .ConfigureFunctionsWebApplication()
             .ConfigureServices(services =>
             {
+                services.AddAutoMapper(Assembly.GetAssembly(typeof(MappingProfile)));
                 services.AddApplicationInsightsTelemetryWorkerService();
                 services.ConfigureFunctionsApplicationInsights();
-
+                services.AddLogging();
+                services.AddScoped<ICategoryRepo,CategoryRepo>();
+                services.AddScoped<IProductRepo, ProductRepo>();
+               
+                //services.AddScoped<ILogger, Logger>();
+                services.AddSingleton<ILoggerFactory,LoggerFactory>();
                 services.AddScoped<DemoDbContext>(svc =>
                 {
                     var options = new DbContextOptionsBuilder<DemoDbContext>().UseSqlite($"Data Source={(isDevEnv ? DBPath : Azure_DBPath)};");

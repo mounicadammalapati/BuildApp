@@ -1,0 +1,51 @@
+﻿CREATE TABLE "Category" (
+	"Id"	INTEGER NOT NULL UNIQUE,
+	"CategoryName"	TEXT NOT NULL,
+	"Updated_by"	TEXT NOT NULL,
+	"Updated_When"	TEXT NOT NULL,
+	"Description"	TEXT,
+	PRIMARY KEY("Id" AUTOINCREMENT)
+)
+
+
+CREATE TABLE "Image" (
+	"Id"	INTEGER NOT NULL UNIQUE,
+	"Imagedata"	BLOB,
+	"ProductId"	INTEGER,
+	"Updated_When"	TEXT NOT NULL,
+	"Updated_by"	TEXT NOT NULL,
+	PRIMARY KEY("Id" AUTOINCREMENT),
+	FOREIGN KEY("ProductId") REFERENCES "Product"("Id")
+)
+
+
+CREATE TABLE "Person" (
+	"Id"	INTEGER NOT NULL UNIQUE,
+	"Name"	TEXT NOT NULL,
+	PRIMARY KEY("Id" AUTOINCREMENT)
+)
+
+
+CREATE TABLE "Product" (
+	"Id"	INTEGER NOT NULL UNIQUE,
+	"Name"	TEXT NOT NULL,
+	"Quantity"	INTEGER NOT NULL,
+	"Price"	REAL NOT NULL,
+	"CategoryId"	INTEGER,
+	"Updated_by"	TEXT NOT NULL,
+	"Updated_When"	TEXT NOT NULL,
+	PRIMARY KEY("Id" AUTOINCREMENT),
+	FOREIGN KEY("CategoryId") REFERENCES "Category"("Id")
+)
+
+CREATE TABLE "WishCart" (
+	"Id"	INTEGER NOT NULL UNIQUE,
+	"SessoinId"	REAL,
+	"Product_Id"	INTEGER NOT NULL,
+	"Updated_by"	TEXT NOT NULL,
+	"Updated_When"	TEXT NOT NULL,
+	PRIMARY KEY("Id" AUTOINCREMENT),
+	FOREIGN KEY("Product_Id") REFERENCES "Product"("Id")
+)
+
+/// insert statements for bulk data
